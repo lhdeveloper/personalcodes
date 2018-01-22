@@ -1,7 +1,7 @@
 # personalcodes
-Personal codes.
+Códigos de uso em projetos.
 
-## Anchor Scrolling Page
+## Anchor Scrolling - para um local específico da página.
 ```
 scrollDown: function(){
     $('#s4-workspace').animate({
