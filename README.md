@@ -10,3 +10,14 @@ scrollDown: function(){
         scrollTop: $("#FinUpdates").offset().top-80},'slow');
 }
 ```
+
+## Current Image - função para split em endereço de imagem (lists)
+```
+currentImage: function(item){
+    if(item.LinkCover){
+        return item.LinkCover.split('src="')[1].split('" ')[0]
+    }else{
+        return '';
+    }	
+}
+```
