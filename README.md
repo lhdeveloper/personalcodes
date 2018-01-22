@@ -17,7 +17,8 @@ OBS: lembrar de modificar o seletor do animate caso não seja intranet e remover
 ```
 scrollDown: function(){
     $('#s4-workspace').animate({
-        scrollTop: $("#FinUpdates").offset().top-80},'slow');
+        scrollTop: $("#FinUpdates").offset().top-80}
+    ,'slow');
 }
 ```
 
