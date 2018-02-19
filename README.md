@@ -51,7 +51,7 @@ var app = new Vue({
 })
 ```
 
-## Anchor Scrolling - para um local específico da página.
+## Anchor Scrolling on SharePoint - para um local específico da página.
 Utilizar este código caso precise inserir uma ancora no banner que arrastará para uma sessão específica da página.
 OBS: lembrar de modificar o seletor do animate caso não seja intranet e remover o "top-80", que é inserido por conta da Ribbon.
 ```
@@ -62,7 +62,7 @@ scrollDown: function(){
 }
 ```
 
-## Current Image - função para split em endereço de imagem (lists)
+## Current Image - função para retorno de LinkImage em endereço de imagem (lists)
 método que splita o valor do campo imagem (texto) preenchido via workflow.
 ```
 currentImage: function(item){
