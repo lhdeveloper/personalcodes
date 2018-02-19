@@ -2,12 +2,52 @@
 Códigos de uso em projetos.
 
 ## $pnp setup vue
-Utilizar este código no começo dos js feitos com vue:
+estrutura inicial do vue padrão
 ```
 $pnp.setup({
-	headers:{
-		"Accept": "application/json; odata=verbose"
+    headers: {
+        "Accept": "application/json; odata=verbose"
+    }
+});
+
+Vue.component('',{
+	template:'',
+	created: function(){
+        .this.getData()
+            .then(this.applyGetData, this.threatError.bind(this,'erro ao obter informações da lista'))
+            .then(this.applyEvents)
+	},
+	methods: {
+        getData: function(){
+            return $pnp.sp.web.lists.getByTitle(this.listName).items
+                        //.filter()
+                        .select('*')
+                        //.expand()
+                        //.orderBy('field',true)
+                        //.top()
+                        .get()
+        },
+        applyGetData: function(data){
+            this.list = data;
+        }
+        applyEvents: function(){
+
+        },
+        threatError: function(msg,data){
+			alert('error - ' + msg);
+		}
+	},
+	data: {
+		return {
+			listName: '',
+			list: []
+		}
 	}
+})
+
+var app = new Vue({
+    el: '#element',
+    template: '<element/>'
 })
 ```
 
@@ -30,6 +70,6 @@ currentImage: function(item){
         return item.LinkCover.split('src="')[1].split('" ')[0]
     }else{
         return '';
-    }	
+    }
 }
 ```
