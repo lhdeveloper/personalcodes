@@ -37,7 +37,7 @@ Vue.component('',{
 			alert('error - ' + msg);
 		}
 	},
-	data: {
+	data: function() {
 		return {
 			listName: '',
 			list: []
