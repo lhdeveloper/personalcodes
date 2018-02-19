@@ -13,7 +13,7 @@ $pnp.setup({
 Vue.component('',{
 	template:'',
 	created: function(){
-        .this.getData()
+        this.getData()
             .then(this.applyGetData, this.threatError.bind(this,'erro ao obter informações da lista'))
             .then(this.applyEvents)
 	},
