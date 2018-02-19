@@ -73,3 +73,39 @@ currentImage: function(item){
     }
 }
 ```
+
+## Count Numbers - Contador de números até um máximo
+Contador utilizado no site da SX para "rodar" os números de 0 ao máximo definido
+```
+parseMsg: function(item){
+    return item.Numeros.replace('{count}', item.Value)
+},
+incrementNumber: function(item, max, interval, increment){
+    increment = increment || 1
+    var delay = interval+(item.Value/1500)
+
+    if(item.Value < max){
+        item.Value = item.Value+increment;
+        setTimeout(this.incrementNumber.bind(this,item, max, delay, increment), interval)
+    }
+},
+onShowCounter: function (isVisible, item, max, delay) {
+    var increment = 0;
+    if(max <= 10){
+        delay = 60
+    }else if(max > 10 && max <= 100){
+        delay = 10
+    }else if(max > 100 && max < 500){
+        delay = 3
+    }else {
+        delay = 1;
+        increment = 2;
+    }
+
+    if(isVisible){
+        setTimeout(this.incrementNumber.bind(this, item, max, delay, increment), delay)
+    } else {
+        item.Value = 0
+    }
+}
+```
