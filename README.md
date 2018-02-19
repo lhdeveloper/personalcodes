@@ -75,7 +75,13 @@ currentImage: function(item){
 ```
 
 ## Count Numbers - Contador de números até um máximo
-Contador utilizado no site da SX para "rodar" os números de 0 ao máximo definido
+###Contador utilizado no site da SX para "rodar" os números de 0 ao máximo definido
+Template: Para utilizar, apenas inserir "parseMsg" passando o item. Na lista deverão conter os campos: Title, Numero (+{count}), Max e Ordem (opcional);
+```
+Exemplo: <h3 v-html="parseMsg(item)"></h3>
+```
+
+Methods:
 ```
 parseMsg: function(item){
     return item.Numeros.replace('{count}', item.Value)
