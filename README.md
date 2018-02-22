@@ -29,7 +29,7 @@ Vue.component('',{
         },
         applyGetData: function(data){
             this.list = data;
-        }
+        },
         applyEvents: function(){
 
         },
