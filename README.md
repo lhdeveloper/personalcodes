@@ -45,7 +45,7 @@ Vue.component('element',{
 	data: function() {
 		return {
 			listName: '',
-            listUrl: _spPageContextInfo.webServerRelativeUrl + '/lists/'+this.listName+''
+            listUrl: _spPageContextInfo.webServerRelativeUrl + '/lists/'+this.listName+'',
 			list: []
 		}
 	}
