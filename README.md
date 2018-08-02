@@ -2,7 +2,7 @@
 Códigos de uso em projetos.
 
 ## $pnp setup vue
-estrutura inicial do vue padrão
+estrutura inicial do component padrão
 ```
 $pnp.setup({
     headers: {
