@@ -10,22 +10,27 @@ $pnp.setup({
     }
 });
 
-Vue.component('',{
-	template:'',
+Vue.component('element',{
+	template:`
+        <element>
+            <div v-for="item in list">
+            </div>
+        </element>
+    `,
 	created: function(){
         this.getData()
-            .then(this.applyGetData, this.threatError.bind(this,'erro ao obter informações da lista'))
+            .then(this.applyGetData, this.threatError.bind(this,'erro ao obter informações da lista '+this.listName+''))
             .then(this.applyEvents)
 	},
 	methods: {
         getData: function(){
-            return $pnp.sp.web.lists.getByTitle(this.listName).items
-                        //.filter()
-                        .select('*')
-                        //.expand()
-                        //.orderBy('field',true)
-                        //.top()
-                        .get()
+            return $pnp.sp.web.getList(this.listUrl).items
+                //.filter()
+                .select('*')
+                //.expand()
+                //.orderBy('field',true)
+                //.top()
+                .get()
         },
         applyGetData: function(data){
             this.list = data;
@@ -34,12 +39,13 @@ Vue.component('',{
 
         },
         threatError: function(msg,data){
-			alert('error - ' + msg);
+			console.error('error - ' + msg);
 		}
 	},
 	data: function() {
 		return {
 			listName: '',
+            listUrl: _spPageContextInfo.webServerRelativeUrl + '/lists/'+this.listName+''
 			list: []
 		}
 	}
