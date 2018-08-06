@@ -5,10 +5,14 @@ Códigos de uso em projetos.
 estrutura inicial do component padrão
 ```
 $pnp.setup({
-    headers: {
-        "Accept": "application/json; odata=verbose"
-    }
+    sp: {
+        headers: {
+            "Accept": "application/json; odata=verbose"
+        }
+    }
 });
+
+
 
 Vue.component('element',{
 	template:`
