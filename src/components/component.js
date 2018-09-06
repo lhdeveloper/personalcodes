@@ -6,7 +6,7 @@ $pnp.setup({
     }
 });
 
-Vue.component('element',{
+Vue.component('component-id',{
     template:`
         <element>
             <div v-for="item in list">
@@ -35,19 +35,20 @@ Vue.component('element',{
 
         },
         threatError: function(msg,data){
-            console.error('error - ' + msg);
+            console.error('error - ' + msg + ' - ' + data);
         }
     },
     data: function() {
+        var listName = 'ListName'
         return {
-            listName: '',
-            listUrl: _spPageContextInfo.webServerRelativeUrl + '/lists/'+this.listName+'',
+            listName: listName,
+            listUrl: _spPageContextInfo.webServerRelativeUrl + '/lists/'+listName+'',
             list: []
         }
     }
 })
 
 var app = new Vue({
-    el: '#element',
-    template: '<element/>'
+    el: '#component-id',
+    template: '<component-id/>'
 })
