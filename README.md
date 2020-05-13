@@ -1,10 +1,6 @@
 # personalcodes
 Códigos de uso em projetos.
 
-## $pnp setup vue
-estrutura inicial do component padrão dentro da pasta src/components.
-
-
 ## Anchor Scrolling on SharePoint - para um local específico da página.
 Utilizar este código caso precise inserir uma ancora no banner que arrastará para uma sessão específica da página.
 OBS: lembrar de modificar o seletor do animate caso não seja intranet e remover o "top-80", que é inserido por conta da Ribbon.
